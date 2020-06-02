@@ -1,0 +1,31 @@
+{
+   "homepage": "https://www.glfw.org/",
+   "description": "GLFW is an Open Source, multi-platform library for OpenGL, OpenGL ES and Vulkan application development. It provides a simple, platform-independent API for creating windows, contexts and surfaces, reading input, handling events, etc.",
+   "license": "zlib license",
+   "version": "3.3.2",
+   "architecture": {
+      "64bit": {
+         "url": "https://github.com/glfw/glfw/releases/download/3.3.2/glfw-3.3.2.bin.WIN64.zip",
+         "md5": "c1ea553d50a2fec72ebc24770b24702f"
+      },
+      "32bit": {
+         "url": "https://github.com/glfw/glfw/releases/download/3.3.2/glfw-3.3.2.bin.WIN32.zip",
+         "md5": "c4ecbdd8fc631785098afa2f68a2733a"
+      }
+   },
+   "checkver": {
+      "url": "https://github.com/glfw/glfw/releases/download",
+      "re": "/download/(\\d+).(\\d+).(\\d+)",
+      "replace": "${1}.${2}.{3}"
+   },
+   "autoupdate": {
+      "architecture": {
+         "64bit": {
+            "url": "https://github.com/glfw/glfw/releases/download/$version/glfw-$version.bin.WIN64.zip"
+         },
+         "32bit": {
+            "url": "https://github.com/glfw/glfw/releases/download/$version/glfw-$version.bin.WIN32.zip"
+         }
+      }
+   }
+}
